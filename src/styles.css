@@ -2,3 +2,11 @@
   font-family: sans-serif;
   text-align: center;
 }
+.text {
+  white-space: normal;
+  white-space: nowrap;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: break-spaces;
+}
