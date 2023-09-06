@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.css";  
 import Map from "./Map";
 
 export default function App() {

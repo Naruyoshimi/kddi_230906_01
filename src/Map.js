@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useGPS } from "./GPS";
 import {
   GoogleMap,
   LoadScript,
@@ -12,8 +13,11 @@ const container = {
 };
 
 const position = {
-  lat: 41.3954,
-  lng: 2.162
+
+  lat: location ? location.latitude : null,
+
+  lng: location ? location.longitude : null,
+
 };
 
 const locations = [
@@ -34,6 +38,7 @@ const locations = [
 ];
 
 function App() {
+  const location = useGPS();
   const [selected, setSelected] = useState({});
   const onSelect = (item) => {
     setSelected(item);
@@ -64,6 +69,12 @@ function App() {
             )}
           </GoogleMap>
         </LoadScript>
+        {position.lat !== null && position.lng !== null ? (
+          <>
+            </>
+        ) : (
+          <p>GPS情報を取得中...</p>
+        )}
       </div>
     </>
   );
